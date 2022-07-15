@@ -7,6 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import GlobalStyles from './styles/GlobalStyles';
 import { dark } from './styles/Themes';
 import Home from './components/sections/Home';
+import About from './components/sections/About';
 
 const App = () => {
   const containerRef = useRef(null);
@@ -31,6 +32,7 @@ const App = () => {
           <AnimatePresence>
             <main data-scroll-container ref={containerRef}>
               <Home />
+              <About />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

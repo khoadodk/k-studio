@@ -1,43 +1,53 @@
 import styled from 'styled-components';
 
 import img1 from '../../assets/img/1.jpg';
+import img2 from '../../assets/img/2.jpg';
 import img3 from '../../assets/img/3.jpg';
+import Title from '../Title';
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
-  width: 80vw;
+  width: 100%;
   position: relative;
 
   display: flex;
   margin: 0 auto;
+  background-color: ${(props) => props.theme.grey};
 `;
 
-const TitleContainer = styled.h1`
-  font-size: 6rem;
-  font-family: 'lora', serif;
+const TitleWrapper = styled.span`
   position: absolute;
-  top: 1rem;
+  top: 5%;
   left: 5%;
   z-index: 10;
 `;
 
 const LeftContainer = styled.div`
-  width: 50%;
+  width: 35%;
   font-size: ${(props) => props.theme.fontlg};
   position: relative;
   z-index: 10;
   margin: auto;
 `;
 const RightContainer = styled.div`
-  width: 50%;
+  width: 35%;
   position: relative;
-  margin: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   img {
     width: 100%;
     height: auto;
+    border-radius: 2%;
   }
 
-  .small-img {
+  .small-img-1 {
+    width: 40%;
+    position: absolute;
+    right: 80%;
+    bottom: 10%;
+  }
+  .small-img-2 {
     width: 40%;
     position: absolute;
     left: 80%;
@@ -48,13 +58,14 @@ const RightContainer = styled.div`
 const Home = () => {
   return (
     <SectionWrapper id="fixed-target">
-      <TitleContainer
+      <TitleWrapper
         data-scroll
         data-scroll-speed="-2"
         data-scroll-direction="horizontal"
       >
-        About Us
-      </TitleContainer>
+        <Title titleText="About Us" />
+      </TitleWrapper>
+
       <LeftContainer
         data-scroll
         data-scroll-sticky
@@ -79,13 +90,19 @@ const Home = () => {
       </LeftContainer>
       <RightContainer>
         <img src={img1} alt="" />
-
+        <img
+          src={img2}
+          alt=""
+          className="small-img-1"
+          data-scroll
+          data-scroll-speed="-2"
+        />
         <img
           src={img3}
           alt=""
-          className="small-img"
+          className="small-img-2"
           data-scroll
-          data-scroll-speed="-2"
+          data-scroll-speed="3"
         />
       </RightContainer>
     </SectionWrapper>

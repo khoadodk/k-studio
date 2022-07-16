@@ -8,6 +8,8 @@ import GlobalStyles from './styles/GlobalStyles';
 import { dark } from './styles/Themes';
 import Home from './components/sections/Home';
 import About from './components/sections/About';
+import Shop from './components/sections/Shop';
+import ScrollTriggerProxy from './components/ScrollTriggerProxy';
 
 const App = () => {
   const containerRef = useRef(null);
@@ -19,6 +21,12 @@ const App = () => {
         <LocomotiveScrollProvider
           options={{
             smooth: true,
+            smartphone: {
+              smooth: true,
+            },
+            tablet: {
+              smooth: true,
+            },
           }}
           watch={
             [
@@ -29,10 +37,16 @@ const App = () => {
           }
           containerRef={containerRef}
         >
+          <ScrollTriggerProxy />
           <AnimatePresence>
-            <main data-scroll-container ref={containerRef}>
+            <main
+              className="App"
+              data-scroll-container
+              ref={containerRef}
+            >
               <Home />
               <About />
+              <Shop />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 const Container = styled.div`
   width: 100%;
@@ -61,6 +62,18 @@ const MenuItemWrapper = styled(motion.li)`
 
 const NavBar = () => {
   const [click, setClick] = useState(false);
+
+  const { scroll } = useLocomotiveScroll();
+
+  const handleScroll = (id) => {
+    let elem = document.querySelector(id);
+
+    scroll.scrollTo(elem, {
+      offset: '-100',
+      duration: '2000',
+      easing: [0.25, 0.0, 0.35, 1.0],
+    });
+  };
   return (
     <Container click={click}>
       <MenuWrapper>
@@ -76,18 +89,21 @@ const NavBar = () => {
         <MenuItemWrapper
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
+          onClick={() => handleScroll('.about')}
         >
           About
         </MenuItemWrapper>
         <MenuItemWrapper
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
+          onClick={() => handleScroll('#shop')}
         >
           Shop
         </MenuItemWrapper>
         <MenuItemWrapper
           whileHover={{ scale: 1.1, y: -5 }}
           whileTap={{ scale: 0.9, y: 0 }}
+          onClick={() => handleScroll('#new-arrival')}
         >
           New Arrival
         </MenuItemWrapper>

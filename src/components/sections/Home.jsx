@@ -13,7 +13,7 @@ const SectionWrapper = styled.section`
 
 const Home = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper id="home">
       <CoverVideo />
       <Logo />
       <NavBar />

@@ -57,7 +57,7 @@ const RightContainer = styled.div`
 
 const Home = () => {
   return (
-    <SectionWrapper id="fixed-target">
+    <SectionWrapper id="fixed-target" className="about">
       <TitleWrapper
         data-scroll
         data-scroll-speed="-2"

@@ -37,6 +37,8 @@ const TitleWrapper = styled.span`
   top: 5%;
   left: 5%;
   z-index: 10;
+  width: 20%;
+  text-align: center;
 `;
 
 const TextWrapper = styled.div`
@@ -107,7 +109,7 @@ const NewArrival = () => {
           scroller: '.App', // locomotive element
           scrub: true,
           pin: true,
-          markers: true,
+          // markers: true,
         },
         ease: 'none',
       });
@@ -118,7 +120,6 @@ const NewArrival = () => {
         {
           y: '0',
         },
-
         {
           y: '-100%',
           scrollTrigger: {
@@ -144,11 +145,7 @@ const NewArrival = () => {
   return (
     <SectionWrapper ref={ref} id="new-arrival">
       <Overlay />
-      <TitleWrapper
-        data-scroll
-        data-scroll-speed="-1.5"
-        data-scroll-direction="horizontal"
-      >
+      <TitleWrapper data-scroll data-scroll-speed="-4">
         <Title titleText="New Arrivals" />
       </TitleWrapper>
 

@@ -165,7 +165,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <SectionWrapper ref={ref}>
+    <SectionWrapper ref={ref} id="shop">
       <TitleWrapper
         data-scroll
         data-scroll-speed="-1.5"

@@ -7,6 +7,7 @@ const SectionWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${(props) => props.theme.grey};
 `;
 
 const Container = styled.div`

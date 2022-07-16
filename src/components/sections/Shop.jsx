@@ -148,7 +148,7 @@ const Shop = () => {
           end: pinWrapWidth,
           scroller: '.App', // locomotive element
           scrub: true,
-          markers: true,
+          // markers: true,
         },
         // We have to increase scrolling height of this section same as the scrolling element width
         x: -pinWrapWidth,
@@ -158,7 +158,10 @@ const Shop = () => {
       ScrollTrigger.refresh();
     }, 1000);
 
-    return () => {};
+    return () => {
+      tl.kill();
+      ScrollTrigger.kill();
+    };
   }, []);
 
   return (

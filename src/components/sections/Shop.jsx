@@ -168,7 +168,7 @@ const Shop = () => {
         data-scroll-speed="-1.5"
         data-scroll-direction="horizontal"
       >
-        <Title titleText="New Arrivals" />
+        <Title titleText="Our Collections" />
       </TitleWrapper>
       <LeftContainer>
         <p>

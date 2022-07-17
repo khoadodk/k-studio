@@ -4,7 +4,7 @@
 
 ## Links
 
-- [Repo](https://github.com/khoadodk/k-studio'<project-name> Repo')
+- [Repo](https://github.com/khoadodk/k-studio 'Repo')
 
 - [Live](https://k-studio.netlify.app/ 'Live View')
 
@@ -12,9 +12,7 @@
 
 ## Screenshots
 
-![Home Page](screenshot.png 'Home Page')
-
-![Live Video](https://www.loom.com/share/2f493e31168e4f69a5d361f6095d6950 'Live video')
+![Live Video](video.mp4 'Live video')
 
 ## Available Commands
 

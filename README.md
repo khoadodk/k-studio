@@ -12,9 +12,7 @@
 
 ## Screenshots
 
-<video width="806" height="720" autoplay muted>
-  <source src="video.mp4" type="video/mp4">
-</video>
+![Preview](video.webm)
 
 ## Available Commands
 

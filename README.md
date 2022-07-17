@@ -12,7 +12,7 @@
 
 ## Screenshots
 
-![Preview](screenshot.gif)
+![Preview](screenshot.webp)
 
 ## Available Commands
 

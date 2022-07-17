@@ -11,9 +11,10 @@ import img14 from '../../assets/img/14.jpg';
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  margin: 0 auto;
+
   position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,9 +28,12 @@ const Overlay = styled.div`
   width: 30vw;
   height: 90vh;
 
-  box-shadow: 0 0 0 4vw ${(props) => props.theme.text};
+  box-shadow: 0 0 0 5vw ${(props) => props.theme.text};
   border: 3px solid ${(props) => props.theme.body};
   z-index: 9;
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const TitleWrapper = styled.span`
@@ -50,6 +54,9 @@ const TextWrapper = styled.div`
   top: 0;
   right: 0;
   z-index: 10;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
@@ -57,7 +64,7 @@ const Container = styled.div`
   top: 0%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 25vw;
+  width: 30vw;
   height: auto;
 
   /* width: 65%; */
@@ -65,6 +72,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 60%;
+  }
 `;
 
 const ProductWrapper = styled.div`

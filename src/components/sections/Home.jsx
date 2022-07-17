@@ -6,7 +6,7 @@ import NavBar from '../NavBar';
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   overflow: hidden;
 `;

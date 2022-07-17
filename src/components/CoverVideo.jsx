@@ -11,6 +11,12 @@ const SectionWrapper = styled.section`
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    @media (max-width: 768px) {
+      object-position: center center;
+    }
+    @media (max-width: 425px) {
+      object-position: center 50%;
+    }
   }
 `;
 
@@ -45,6 +51,9 @@ const TitleWrapper = styled(motion.div)`
     font-family: 'Lora', serif;
     font-size: 150px;
     text-shadow: 1px 1px 1px ${(props) => props.theme.body};
+    @media (max-width: 425px) {
+      font-size: ${(props) => props.theme.fontxxxl};
+    }
   }
 `;
 

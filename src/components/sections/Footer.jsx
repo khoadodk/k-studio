@@ -50,6 +50,10 @@ const FooterComponent = styled(motion.footer)`
     padding: 0 1rem;
     border-top: 1px solid ${(props) => props.theme.text};
     border-bottom: 1px solid ${(props) => props.theme.text};
+    @media (max-width: 768px) {
+      flex-direction: column;
+      font-size: ${(props) => props.theme.fontsm};
+    }
   }
 
   li {
@@ -73,6 +77,14 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    font-size: ${(props) => props.theme.fontmd};
+    span {
+      transform: none !important;
+    }
+  }
   a {
     text-decoration: underline;
   }

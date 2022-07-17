@@ -7,7 +7,7 @@ import Title from '../Title';
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
 
   display: flex;
@@ -28,6 +28,27 @@ const LeftContainer = styled.div`
   position: relative;
   z-index: 10;
   margin: auto;
+  @media (max-width: 1024px) {
+    font-size: ${(props) => props.theme.fontmd};
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 auto;
+    padding: 2rem;
+    backdrop-filter: blur(3px);
+    background-color: ${(props) =>
+      `rgba(${props.theme.textRgba},0.4)`};
+    border-radius: 20px;
+    font-weight: bold;
+  }
+  @media (max-width: 425px) {
+    font-size: ${(props) => props.theme.fontsm};
+  }
 `;
 const RightContainer = styled.div`
   width: 35%;
@@ -52,6 +73,26 @@ const RightContainer = styled.div`
     position: absolute;
     left: 80%;
     bottom: 30%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .small-img-1 {
+      width: 30%;
+      right: 60%;
+    }
+    .small-img-2 {
+      width: 40%;
+      left: 60%;
+      bottom: 10%;
+    }
   }
 `;
 

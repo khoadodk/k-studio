@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 const Container = styled(motion.div)`
-  width: 100%;
+  width: 100vw;
   z-index: 10;
   position: absolute;
   top: ${(props) =>
@@ -52,6 +52,9 @@ const MenuWrapper = styled.ul`
   align-items: center;
   width: 100%;
   padding: 0 10rem;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const MenuItemWrapper = styled(motion.li)`
@@ -76,7 +79,7 @@ const NavBar = () => {
   };
   return (
     <Container
-      click={click}
+      click={+click}
       initial={{
         y: '-100%',
       }}

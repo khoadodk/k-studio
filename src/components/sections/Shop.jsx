@@ -55,6 +55,12 @@ const LeftContainer = styled.div`
     margin: 0 auto;
     font-size: ${(props) => props.theme.fontlg};
     color: ${(props) => props.theme.text};
+    @media (max-width: 768px) {
+      font-size: ${(props) => props.theme.fontmd};
+    }
+    @media (max-width: 425px) {
+      font-size: ${(props) => props.theme.fontsm};
+    }
   }
 `;
 
@@ -63,7 +69,6 @@ const RightContainer = styled.div`
   left: 35%;
   padding-left: 35%;
   min-height: 100vh;
-  /* width: 65%; */
   background-color: ${(props) => props.theme.grey};
   display: flex;
   justify-content: flex-start;

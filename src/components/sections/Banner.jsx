@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
   min-height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.grey};
+
+  z-index: 12;
 `;
 
 const Container = styled.div`
@@ -28,6 +30,12 @@ const BannerComponent = styled.p`
   white-space: nowrap;
   text-transform: uppercase;
   line-height: 1;
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontlg};
+  }
+  @media (max-width: 425px) {
+    font-size: ${(props) => props.theme.fontmd};
+  }
 
   span {
     display: block;

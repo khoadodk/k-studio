@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   z-index: 10;
   position: absolute;
@@ -75,7 +75,19 @@ const NavBar = () => {
     });
   };
   return (
-    <Container click={click}>
+    <Container
+      click={click}
+      initial={{
+        y: '-100%',
+      }}
+      animate={{
+        y: 0,
+      }}
+      transition={{
+        duration: 2,
+        delay: 5,
+      }}
+    >
       <MenuWrapper>
         <MenuBtnWrapper onClick={() => setClick(!click)}>
           Menu

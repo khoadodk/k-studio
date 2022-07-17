@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { AnimatePresence } from 'framer-motion';
@@ -13,9 +13,18 @@ import ScrollTriggerProxy from './components/ScrollTriggerProxy';
 import Banner from './components/sections/Banner';
 import NewArrival from './components/sections/NewArrival';
 import Footer from './components/sections/Footer';
+import Loader from './components/Loader';
 
 const App = () => {
   const containerRef = useRef(null);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -40,6 +49,9 @@ const App = () => {
           }
           containerRef={containerRef}
         >
+          <AnimatePresence>
+            {loaded ? null : <Loader />}
+          </AnimatePresence>
           <ScrollTriggerProxy />
           <AnimatePresence>
             <main

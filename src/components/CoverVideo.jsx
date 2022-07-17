@@ -43,7 +43,7 @@ const TitleWrapper = styled(motion.div)`
   }
   h1 {
     font-family: 'Lora', serif;
-    font-size: 100px;
+    font-size: 150px;
     text-shadow: 1px 1px 1px ${(props) => props.theme.body};
   }
 `;
@@ -55,10 +55,18 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      delay: 2,
-      duration: 2,
-      ease: 'easeInOut',
+      delayChildren: 5, // 2
+      staggerChildren: 0.3,
     },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
   },
 };
 
@@ -73,6 +81,7 @@ const CoverVideo = () => {
       >
         <div>
           <motion.h1
+            variants={itemVariants}
             data-scroll
             data-scroll-delay=".12"
             data-scroll-speed="4"
@@ -80,6 +89,7 @@ const CoverVideo = () => {
             K
           </motion.h1>
           <motion.h1
+            variants={itemVariants}
             data-scroll
             data-scroll-delay=".08"
             data-scroll-speed="4"
@@ -87,6 +97,7 @@ const CoverVideo = () => {
             A
           </motion.h1>
           <motion.h1
+            variants={itemVariants}
             data-scroll
             data-scroll-delay=".04"
             data-scroll-speed="4"
@@ -94,9 +105,13 @@ const CoverVideo = () => {
             Y
           </motion.h1>
         </div>
-        <h2 data-scroll data-scroll-speed="3">
+        <motion.h2
+          variants={itemVariants}
+          data-scroll
+          data-scroll-speed="3"
+        >
           Inspire. Create. Believe
-        </h2>
+        </motion.h2>
       </TitleWrapper>
       <video src={Video} type="video/m4" autoPlay muted loop />
     </SectionWrapper>
